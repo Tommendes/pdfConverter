@@ -1,3 +1,23 @@
+# Ignorar a pasta venv
 venv/
-*.doc
-*.xls
+
+# Ignorar arquivos resultantes
+*.xlsx
+*.csv
+*.docx
+*.pdf
+
+# Ignorar arquivos e pastas de logs
+*.log
+
+# Ignorar arquivos de configuração temporários
+*.tmp
+*.swp
+
+# Ignorar arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignorar arquivos do IDE
+.vscode/
+.idea/
