@@ -21,3 +21,9 @@ Thumbs.db
 # Ignorar arquivos do IDE
 .vscode/
 .idea/
+
+# Ignorar todos os arquivos .txt, exceto o requirements.txt
+*.txt
+!requirements.txt
+
+.Identifier
