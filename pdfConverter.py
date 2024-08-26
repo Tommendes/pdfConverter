@@ -11,7 +11,7 @@ def convert_pdf_to_formats(pdf_path):
     base_name = os.path.splitext(os.path.basename(pdf_path))[0]
     excel_path = f"{base_name}.xlsx"
     csv_path = f"{base_name}.csv"
-    txt_path = f"{base_name}.txt"
+    # txt_path = f"{base_name}.txt"
 
     # Abrir o arquivo PDF
     with pdfplumber.open(pdf_path) as pdf:
@@ -38,8 +38,8 @@ def convert_pdf_to_formats(pdf_path):
         df.to_csv(f, index=False, sep=';', quotechar='"')
 
     # Salvar o DataFrame como um arquivo TXT
-    with open(txt_path, 'w') as txt_file:
-        txt_file.write(df.to_string(index=False))
+    # with open(txt_path, 'w') as txt_file:
+    #     txt_file.write(df.to_string(index=False))
 
     # Salvar o DataFrame como um arquivo Excel
     df.to_excel(excel_path, index=False)
