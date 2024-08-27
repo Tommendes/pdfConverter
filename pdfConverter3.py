@@ -32,6 +32,16 @@ def clean_and_trim_columns(line):
     columns = [col.strip() for col in line.split(';') if col.strip()]
     return ';'.join(columns)
 
+def concatenate_cpf_columns(line):
+    """
+    Concatena as colunas 2 e 3 (CPF) em uma única coluna.
+    """
+    columns = line.split(';')
+    if len(columns) > 2:
+        columns[1] = columns[1] + columns[2]
+        del columns[2]
+    return ';'.join(columns)
+
 def convert_pdf_to_csv_with_delimiters(pdf_path):
     # Definir o caminho de saída
     base_name = os.path.splitext(os.path.basename(pdf_path))[0]
@@ -55,10 +65,15 @@ def convert_pdf_to_csv_with_delimiters(pdf_path):
             # Processar cada linha para melhorar a separação por colunas
             processed_line = split_line_by_patterns(line)
             processed_line = clean_and_trim_columns(processed_line)
+            processed_line = concatenate_cpf_columns(processed_line)
 
             # Remover linhas sem CPF
             if re.search(r'\d{11}', processed_line):
                 processed_lines.append(processed_line)
+
+        # Adicionar cabeçalho correto
+        header = "Nome;CPF;Contrato;Dt. Contrato;Parcela;Valor da Parcela"
+        processed_lines.insert(0, header)
 
         # Escrever o texto processado em CSV
         with open(csv_path, 'w') as file:
@@ -68,7 +83,7 @@ def convert_pdf_to_csv_with_delimiters(pdf_path):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Uso: python pdfConverter2.py <arquivo_pdf>")
+        print("Uso: python pdfConverter3.py <arquivo_pdf>")
         sys.exit(1)
 
     pdf_file = sys.argv[1]
