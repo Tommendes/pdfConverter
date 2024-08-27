@@ -26,4 +26,4 @@ Thumbs.db
 *.txt
 !requirements.txt
 
-.Identifier
+*.Identifier
