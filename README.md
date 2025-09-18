@@ -17,14 +17,36 @@ git clone https://github.com/Tommendes/pdfConverter.git
 cd pdfConverter
 ```
 
-### 2. Crie e ative um ambiente virtual Python
+### 2. 🐍 Instalar / Atualizar Python 3 no WSL Ubuntu 22.04
+
+Atualize a lista de pacotes
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+Instale o Python 3 e pip
+
+```bash
+sudo apt install -y python3 python3-pip python3-venv
+```
+
+Isso instala:
+
+python3 → interpretador Python
+
+pip3 → gerenciador de pacotes
+
+venv → para criar ambientes virtuais isolados
+
+### 3. Crie e ative um ambiente virtual Python
 
 ```bash
 python3.9 -m venv venv
 source venv/bin/activate
 ```
 
-### 3. Instale as dependências
+### 4. Instale as dependências
 
 ```bash
 pip install -r requirements.txt
@@ -39,7 +61,7 @@ As bibliotecas necessárias estão listadas no arquivo `requirements.txt`:
 - openpyxl
 - python-docx
 
-### 4. Execução do Script
+### 5. Execução do Script
 
 Para executar o script, basta rodar o comando abaixo, passando o arquivo PDF que deseja converter:
 
