@@ -7,7 +7,7 @@ Este script converte arquivos PDF em arquivos Excel, CSV e DOCX. Ele usa as bibl
 
 ## Requisitos
 
-Certifique-se de ter o Python 3.9 instalado em seu sistema.
+Certifique-se de ter o Python 3 instalado em seu sistema.
 ```
 
 ### 1. Clone o repositório ou baixe o script
@@ -42,7 +42,7 @@ venv → para criar ambientes virtuais isolados
 ### 3. Crie e ative um ambiente virtual Python
 
 ```bash
-python3.9 -m venv venv
+python3 -m venv venv
 source venv/bin/activate
 ```
 
@@ -84,15 +84,15 @@ Se preferir, você pode executar o script abaixo para automatizar a instalação
 ```bash
 #!/bin/bash
 
-# Verificar se o Python 3.9 está instalado
-if ! command -v python3.9 &> /dev/null
+# Verificar se o Python 3 está instalado
+if ! command -v python3 &> /dev/null
 then
-    echo "Python 3.9 não encontrado. Instale o Python 3.9 antes de continuar."
+    echo "Python 3 não encontrado. Instale o Python 3 antes de continuar."
     exit
 fi
 
 # Criar o ambiente virtual
-python3.9 -m venv venv
+python3 -m venv venv
 
 # Ativar o ambiente virtual
 source venv/bin/activate
@@ -115,6 +115,6 @@ O `setup.sh` irá configurar tudo automaticamente para você. Depois disso, voc�
 
 ### Notas
 
-- Certifique-se de que o Python 3.9 está instalado.
+- Certifique-se de que o Python 3 está instalado.
 - Siga os passos de instalação cuidadosamente.
 - O script espera que o PDF contenha tabelas que possam ser extraídas. Verifique a qualidade do PDF caso o resultado esteja inconsistente.
